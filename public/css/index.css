@@ -89,6 +89,14 @@ header {
     top: 5rem;
 }
 
+.container .aside-left {
+    right: 1rem;
+}
+
+.container .aside-right {
+    left: 1rem;
+}
+
 .container aside {
     position: relative;
     padding: 1rem;
@@ -128,6 +136,7 @@ header {
 
 .container aside ul li:hover {
     background-color: black;
+    transition: 200ms;
 }
 
 .container aside ul li:hover a {
@@ -136,7 +145,7 @@ header {
 
 .container main {
     position: relative;
-    width: 50%;
+    width: 33.33%;
 }
 
 .container main h2 {
@@ -148,6 +157,12 @@ header {
     padding: .5rem;
 }
 
+.container main h3 {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .container main .main-h2 {
     display: flex;
     justify-content: center;
@@ -157,14 +172,26 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
     padding: 1rem;
 }
 
-.aside-left {
-    right: 2.5rem;
+.container main ul {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 1.5rem;
 }
 
-.aside-right {
-    left: 6.5rem;
+.container main ul li a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: .5rem;
+    border-radius: .25rem;
+}
+
+.container main ul li a:hover {
+    color: white;
+    background-color: black;
+    transition: 200ms;
 }
