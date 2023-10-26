@@ -171,8 +171,30 @@ header {
 .container main .main-article {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: .5rem;
     padding: 1rem;
+}
+
+.container main .main-article ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    font-weight: bold;
+}
+
+.container main .main-article table {
+    width: 100%;
+    text-align: center;
+    border-radius: 1em;
+}
+
+.container main .main-article th {
+    font-weight: bold
+}
+
+.container main .main-article td, th {
+    padding: .5em;
+    border-bottom: 2px solid black; 
 }
 
 .container main ul {
