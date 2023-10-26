@@ -1,25 +1,9 @@
 <?php
     require('app/database/db.php');
 
-    $db = new Connection('localhost', 'filedown', 3306, 'root', '');
+    $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
-    $sentence1 = $db->prepare("SELECT * FROM ARCHIVOS GROUP BY FECHA_SUBIDA DESC");
+    $sentence1 = $db->prepare("SELECT * FROM FILES WHERE ID >= (SELECT MAX(ID) FROM FILES) - 19");
     $sentence1->execute();
     $results1 = $sentence1->fetchAll();
-?>
-
-<h2>👇🏻 ÚLTIMOS ARCHIVOS AÑADIDOS</h2>
-
-<?php
-    foreach ($results1 as $result) {
-        echo "
-        <article>
-            <ul>
-                <li><img src='{$result['RUTA_IMG']}' alt=''></li>
-                <li>{$result['TITULO']}</li>
-                <button><a href='archivo.php?id={$result['ID']}'>DESCARGAR</a></button>
-            </ul>
-        </article>
-        ";
-    }
 ?>
