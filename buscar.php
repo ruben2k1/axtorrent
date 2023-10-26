@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar <?php echo $type ?? $title ?> - AXTorrent</title>
+    <title>Buscar <?php echo $type ?? $title ?? $format?> - AXTorrent</title>
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
@@ -21,7 +21,7 @@
 
         <main>
             <div class="main-h2">
-                <h2>BUSCAR: <?php echo $type ?? $title ?></h2>
+                <h2>BUSCAR: <?php echo $type ?? $title ?? $format ?></h2>
             </div>
             <div class="main-article">
                 <?php
@@ -38,7 +38,16 @@
             <ul>
             <?php 
                 for ($i = $minPage; $i <= $maxPage; $i++) {
-                    $param = isset($type) ? "type={$type}" : "title={$title}";
+                    if (isset($type)) {
+                        $param = "type={$type}";
+                    } elseif (isset($title)) {
+                        $param = "title={$title}";
+                    } elseif (isset($format)) {
+                        $param = "format={$format}";
+                    } else {
+                        $param = "";
+                    }
+
                     echo "<li><a href='buscar.php?$param&page=$i'>$i</a></li>";
                 }
             ?>

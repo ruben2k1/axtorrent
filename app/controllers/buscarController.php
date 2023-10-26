@@ -152,13 +152,8 @@
             $typeParam5 = "BluRay-720p";
             $typeParam6 = "4K";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?, ?) AND UPPER(TYPE) = 'PELICULA'");
-            $sentence2->bindParam(1, $typeParam1);
-            $sentence2->bindParam(2, $typeParam2);
-            $sentence2->bindParam(3, $typeParam3);
-            $sentence2->bindParam(4, $typeParam4);
-            $sentence2->bindParam(5, $typeParam5);
-            $sentence2->bindParam(6, $typeParam6);
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam6);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
         
@@ -178,6 +173,90 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
+        }elseif ($type==='videojuegos') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $typeParam = "VIDEOJUEGO";
+            $sentence2->bindParam(1, $typeParam);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $typeParam = "VIDEOJUEGO";
+            $sentence1->bindParam(1, $typeParam);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($type==='documentales') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $typeParam = "DOCUMENTAL";
+            $sentence2->bindParam(1, $typeParam);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $typeParam = "DOCUMENTAL";
+            $sentence1->bindParam(1, $typeParam);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($type==='musica') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $typeParam = "MUSICA";
+            $sentence2->bindParam(1, $typeParam);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $typeParam = "MUSICA";
+            $sentence1->bindParam(1, $typeParam);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }else {
+            header('Location: index.php');
+            die();
         }
     } elseif (isset($_GET['title']) && !empty($_GET['title'])) {
         $title = $_GET['title'];
@@ -206,7 +285,176 @@
         $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
         $sentence1->execute();
         $results1 = $sentence1->fetchAll();
-    } else {
+    }elseif (isset($_GET['format']) && !empty($_GET['format'])) {
+        $format = $_GET['format'];
+
+        if ($format === '4k') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+
+            $typeParam1 = "4K";
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam1);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1->bindParam(1, $typeParam1);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($format === 'bdremux-1080p') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+
+            $typeParam1 = "BDremux-1080p";
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam1);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1->bindParam(1, $typeParam1);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($format === 'blueray-1080p') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+
+            $typeParam1 = "BluRay-1080p";
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam1);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1->bindParam(1, $typeParam1);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($format === 'blueray-720p') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+
+            $typeParam1 = "BluRay-720p";
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam1);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1->bindParam(1, $typeParam1);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($format === 'microhd-1080p') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+
+            $typeParam1 = "MicroHD-1080p";
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam1);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1->bindParam(1, $typeParam1);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }elseif ($format === 'microhd-720p') {
+            $page = $_GET['page'] ?? 1;
+            $offset = ($page - 1) * 20;
+
+            $typeParam1 = "MicroHD-720p";
+    
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2->bindParam(1, $typeParam1);
+            $sentence2->execute();
+            $totalResults = $sentence2->fetchColumn();
+        
+            $totalPages = ceil($totalResults / 20);
+        
+            $minPage = max(1, $page - 3);
+            $maxPage = min($totalPages, $page + 3);
+    
+            if ($page > $totalPages) {
+                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                die();
+            }
+    
+            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1->bindParam(1, $typeParam1);
+            $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+            $sentence1->execute();
+            $results1 = $sentence1->fetchAll();
+        }else {
+            header('Location: index.php');
+            die();
+        }
+    }else {
         header('Location: index.php');
         die();
     }
