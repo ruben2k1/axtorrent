@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar <?php echo $type ?> - AXTorrent</title>
+    <title>Buscar <?php echo $type ?? $title ?> - AXTorrent</title>
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
@@ -21,7 +21,7 @@
 
         <main>
             <div class="main-h2">
-                <h2>BUSCAR: <?php echo $type ?></h2>
+                <h2>BUSCAR: <?php echo $type ?? $title ?></h2>
             </div>
             <div class="main-article">
                 <?php
@@ -36,13 +36,12 @@
                 ?>
             </div>
             <ul>
-                <li>
-                    <a href="">1</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">...</a>
-                    <a href="">50</a>
-                </li>
+            <?php 
+                for ($i = $minPage; $i <= $maxPage; $i++) {
+                    $param = isset($type) ? "type={$type}" : "title={$title}";
+                    echo "<li><a href='buscar.php?$param&page=$i'>$i</a></li>";
+                }
+            ?>
             </ul>
         </main>
 
