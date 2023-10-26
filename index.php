@@ -1,3 +1,5 @@
+<?php require('app/controllers/indexController.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,38 +14,66 @@
 </head>
 </head>
 <body>
-    <?php
-        require('app/views/partials/header.php');
-    ?>
+    <?php require('app/views/partials/header.php'); ?>
 
     <div class="container">
-        <?php
-            require('app/views/partials/aside-left.php');
-        ?>
+        <?php require('app/views/partials/aside-left.php'); ?>
 
         <main>
             <div class="main-h2">
                 <h2>ÚLTIMOS TORRENTS</h2>
             </div>
+            <h3>SERIES</h3>
             <div class="main-article">
-                <article>
-                    <img src="https://images.weserv.nl/?url=https://container765-deploy-static.cdndelta.com/imagenes/peliculas/american_insurrection-278633313-mmed.jpg" alt="">
-                </article>
-                <article>
-                    <img src="https://images.weserv.nl/?url=https://container765-deploy-static.cdndelta.com/imagenes/peliculas/american_insurrection-278633313-mmed.jpg" alt="">
-                </article>
-                <article>
-                    <img src="https://images.weserv.nl/?url=https://container765-deploy-static.cdndelta.com/imagenes/peliculas/american_insurrection-278633313-mmed.jpg" alt="">
-                </article>
-                <article>
-                    <img src="https://images.weserv.nl/?url=https://container765-deploy-static.cdndelta.com/imagenes/peliculas/american_insurrection-278633313-mmed.jpg" alt="">
-                </article>
-                <article>
-                    <img src="https://images.weserv.nl/?url=https://container765-deploy-static.cdndelta.com/imagenes/peliculas/american_insurrection-278633313-mmed.jpg" alt="">
-                </article>
-                <article>
-                    <img src="https://images.weserv.nl/?url=https://container765-deploy-static.cdndelta.com/imagenes/peliculas/american_insurrection-278633313-mmed.jpg" alt="">
-                </article>
+                <?php
+                    foreach ($results1 as $result) {
+                        echo "
+                        <div class='main-article'>
+                            <article>
+                                <a href=''><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                            </article>
+                        </div>";
+                    }
+                ?>
+            </div>
+            <h3>PELÍCULAS</h3>
+            <div class="main-article">
+                <?php
+                    foreach ($results2 as $result) {
+                        echo "
+                        <div class='main-article'>
+                            <article>
+                                <a href=''><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                            </article>
+                        </div>";
+                    }
+                ?>
+            </div>
+            <h3>VIDEOJUEGOS</h3>
+            <div class="main-article">
+                <?php
+                    foreach ($results3 as $result) {
+                        echo "
+                        <div class='main-article'>
+                            <article>
+                                <a href=''><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                            </article>
+                        </div>";
+                    }
+                ?>
+            </div>
+            <h3>DOCUMENTALES</h3>
+            <div class="main-article">
+                <?php
+                    foreach ($results4 as $result) {
+                        echo "
+                        <div class='main-article'>
+                            <article>
+                                <a href=''><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                            </article>
+                        </div>";
+                    }
+                ?>
             </div>
         </main>
 
