@@ -10,7 +10,7 @@
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "SERIE";
             $sentence2->bindParam(1, $typeParam);
             $sentence2->execute();
@@ -27,7 +27,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
             $typeParam = "SERIE";
             $sentence1->bindParam(1, $typeParam);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
@@ -43,7 +43,7 @@
             $typeParam4 = "HDTV-1080p";
             $typeParam5 = "BluRay-720p";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?) AND UPPER(TYPE) = 'SERIE'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?) AND UPPER(TYPE) = 'SERIE'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->bindParam(2, $typeParam2);
             $sentence2->bindParam(3, $typeParam3);
@@ -63,7 +63,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?) LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?) LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $typeParam2);
             $sentence1->bindParam(3, $typeParam3);
@@ -76,7 +76,7 @@
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "PELICULA";
             $sentence2->bindParam(1, $typeParam);
             $sentence2->execute();
@@ -93,7 +93,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
             $typeParam = "PELICULA";
             $sentence1->bindParam(1, $typeParam);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
@@ -110,7 +110,7 @@
             $typeParam5 = "BluRay-720p";
             $typeParam6 = "4K";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?, ?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?, ?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->bindParam(2, $typeParam2);
             $sentence2->bindParam(3, $typeParam3);
@@ -131,7 +131,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?, ?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?, ?, ?, ?, ?, ?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $typeParam2);
             $sentence1->bindParam(3, $typeParam3);
@@ -152,7 +152,7 @@
             $typeParam5 = "BluRay-720p";
             $typeParam6 = "4K";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam6);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -168,7 +168,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam6);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
@@ -177,7 +177,7 @@
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "VIDEOJUEGO";
             $sentence2->bindParam(1, $typeParam);
             $sentence2->execute();
@@ -194,7 +194,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
             $typeParam = "VIDEOJUEGO";
             $sentence1->bindParam(1, $typeParam);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
@@ -204,7 +204,7 @@
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "DOCUMENTAL";
             $sentence2->bindParam(1, $typeParam);
             $sentence2->execute();
@@ -221,7 +221,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
             $typeParam = "DOCUMENTAL";
             $sentence1->bindParam(1, $typeParam);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
@@ -231,7 +231,7 @@
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?)");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "MUSICA";
             $sentence2->bindParam(1, $typeParam);
             $sentence2->execute();
@@ -248,7 +248,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(TYPE) LIKE UPPER(?) LIMIT 20 OFFSET ?");
             $typeParam = "MUSICA";
             $sentence1->bindParam(1, $typeParam);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
@@ -263,7 +263,7 @@
         $page = $_GET['page'] ?? 1;
         $offset = ($page - 1) * 20;
 
-        $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE LOWER(TITLE) LIKE LOWER(?)");
+        $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
         $tituloParam = "%$title%";
         $sentence2->bindParam(1, $tituloParam);
         $sentence2->execute();
@@ -280,7 +280,7 @@
             die();
         }
 
-        $sentence1 = $db->prepare("SELECT * FROM FILES WHERE LOWER(TITLE) LIKE LOWER(?) LIMIT 20 OFFSET ?");
+        $sentence1 = $db->prepare("SELECT * FROM files WHERE LOWER(TITLE) LIKE LOWER(?) LIMIT 20 OFFSET ?");
         $sentence1->bindParam(1, $tituloParam);
         $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
         $sentence1->execute();
@@ -294,7 +294,7 @@
 
             $typeParam1 = "4K";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -310,7 +310,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
@@ -321,7 +321,7 @@
 
             $typeParam1 = "BDremux-1080p";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -337,7 +337,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
@@ -348,7 +348,7 @@
 
             $typeParam1 = "BluRay-1080p";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -364,7 +364,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
@@ -375,7 +375,7 @@
 
             $typeParam1 = "BluRay-720p";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -391,7 +391,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
@@ -402,7 +402,7 @@
 
             $typeParam1 = "MicroHD-1080p";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -418,7 +418,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
@@ -429,7 +429,7 @@
 
             $typeParam1 = "MicroHD-720p";
     
-            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
+            $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA'");
             $sentence2->bindParam(1, $typeParam1);
             $sentence2->execute();
             $totalResults = $sentence2->fetchColumn();
@@ -445,7 +445,7 @@
                 die();
             }
     
-            $sentence1 = $db->prepare("SELECT * FROM FILES WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
+            $sentence1 = $db->prepare("SELECT * FROM files WHERE UPPER(FORMAT) IN (?) AND UPPER(TYPE) = 'PELICULA' LIMIT 20 OFFSET ?");
             $sentence1->bindParam(1, $typeParam1);
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();

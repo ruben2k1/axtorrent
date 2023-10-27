@@ -10,7 +10,7 @@
 
     $id = $_GET['id'];
 
-    $sentence1 = $db->prepare("SELECT * FROM FILES WHERE ID = ?");
+    $sentence1 = $db->prepare("SELECT * FROM files WHERE ID = ?");
     $sentence1->bindParam(1, $id);
     $sentence1->execute();
     $results1 = $sentence1->fetch();
@@ -20,12 +20,12 @@
         die();
     }
 
-    $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM EPISODES WHERE FILE_ID = ?");
+    $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM episodes WHERE FILE_ID = ?");
     $sentence2->bindParam(1, $id);
     $sentence2->execute();
     $results2 = $sentence2->fetch();
 
-    $sentence3 = $db->prepare("SELECT * FROM EPISODES WHERE FILE_ID = ?");
+    $sentence3 = $db->prepare("SELECT * FROM episodes WHERE FILE_ID = ?");
     $sentence3->bindParam(1, $id);
     $sentence3->execute();
     $results3 = $sentence3->fetchAll();

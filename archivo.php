@@ -25,7 +25,7 @@
             </div>
             <div class="main-article">
                 <article>
-                    <img src="<?php echo $results1['EXT_IMG_ROUTE'] ?>" alt="">
+                    <img src="<?php echo $results1['EXT_IMG_ROUTE'] ?>" alt="<?php echo $results1['TITLE'] ?>">
                 </article>
                 <article>
                     <ul>
