@@ -33,7 +33,7 @@
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href=''><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }
