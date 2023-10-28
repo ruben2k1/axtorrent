@@ -1,11 +1,19 @@
 <?php require('app/controllers/archivoController.php'); ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivos - AXTorrent</title>
+    <title>Descargar <?php echo $results1['TITLE']; ?> - AXTorrent</title>
+    <meta name="description" content="Descargar <?php echo $results1['TITLE']; ?>">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:url" content="https://axtorrent.com">
+    <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Descargar <?php echo $results1['TITLE']; ?> Gratis en Español y <?php echo $results1['FORMAT']; ?>">
+    <meta name="twitter:description" content="Descargar <?php echo $results1['TITLE']; ?> Gratis en Español y <?php echo $results1['FORMAT']; ?>">
+    <meta name="twitter:image" content="public/logo.svg">
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
@@ -27,7 +35,7 @@
 
         <main>
             <div class="main-h2">
-                <h2>ARCHIVO</h2>
+                <h2>DESCARGAR: <?php echo $results1['TITLE']; ?></h2>
             </div>
             <div class="main-article">
                 <article>
