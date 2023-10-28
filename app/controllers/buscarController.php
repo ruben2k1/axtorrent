@@ -268,6 +268,11 @@
         $sentence2->bindParam(1, $tituloParam);
         $sentence2->execute();
         $totalResults = $sentence2->fetchColumn();
+
+        if ($totalResults === 0) {
+            header('Location: index.php');
+            die();
+        }
     
         $totalPages = ceil($totalResults / 20);
     
