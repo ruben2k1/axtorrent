@@ -5,7 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar <?php echo $type ?? $title ?? $format?> - AXTorrent</title>
+    <title>Buscar: <?php echo $type ?? $title ?? $format ?> - AXTorrent</title>
+    <meta name="description" content="Buscar: <?php echo $type ?? $title ?? $format ?> - AXTorrent">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:url" content="https://axtorrent.com">
+    <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Buscar: <?php echo $type ?? $title ?? $format ?> - AXTorrent">
+    <meta name="twitter:description" content="Buscar: <?php echo $type ?? $title ?? $format ?> - AXTorrent">
+    <meta name="twitter:image" content="public/logo.svg">
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
