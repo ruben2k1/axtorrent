@@ -38,7 +38,7 @@
                     <label for="correo"><i class="bi bi-envelope"></i></label><br>
                     <input type="email" name="correo" class="input-text" maxlength="50" required placeholder="Correo electrónico"><br>
                     <label for="mensaje"><i class="bi bi-chat-dots"></i></label><br>
-                    <textarea name="mensaje" class="input-text" cols="50" rows="10" maxlength="200" required placeholder="Si desea agregar más contenido o algo no está funcionando como debería, no dude en hacérnoslo saber"></textarea><br>
+                    <textarea name="mensaje" class="input-text" cols="50" rows="10" maxlength="500" required placeholder="Si desea agregar más contenido o algo no está funcionando como debería, no dude en hacérnoslo saber"></textarea><br>
                     <button type="submit"><i class="bi bi-send-check"></i></button>
                 </form>
             </div>

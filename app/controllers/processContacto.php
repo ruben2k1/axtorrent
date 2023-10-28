@@ -5,13 +5,18 @@
     $correo = $_POST['correo'];
     $mensaje = $_POST['mensaje'];
 
-    $db = new Connection('localhost', 'filedown', 3306, 'root', '');
+    if ($nombre === '' || $correo === '' || $mensaje === '') {
+        header('Location: ../../index.php');
+        die();
+    }
 
-    $sentence1 = $db->prepare("INSERT INTO CONTACTO (nombre, correo, mensaje) VALUES (?, ?, ?)");
+    $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
+
+    $sentence1 = $db->prepare("INSERT INTO contact (name, email, message) VALUES (?, ?, ?)");
     $sentence1->bindParam(1, $nombre);
     $sentence1->bindParam(2, $correo);
     $sentence1->bindParam(3, $mensaje);
     $sentence1->execute();
 
-    header('Location: ../../contacto.php');
+    header('Location: ../../index.php');
 ?>
