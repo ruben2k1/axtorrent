@@ -34,8 +34,8 @@
         <?php require('app/views/partials/aside-left.php'); ?>
 
         <main>
-            <div class="main-h2">
-                <h2>DESCARGAR: <?php echo $results1['TITLE']; ?></h2>
+            <div class="main-h1">
+                <h1>DESCARGAR: <?php echo $results1['TITLE']; ?> por Torrent</h1>
             </div>
             <div class="main-article">
                 <article>

@@ -1,5 +1,5 @@
 <aside class="aside-left">
-  <h1>DESCARGAR TORRENTS</h1>
+  <h2>DESCARGAR TORRENTS</h2>
   <ul>
     <li><a href="buscar.php?type=series">SERIES</a></li>
     <li><a href="buscar.php?type=series-hd">SERIES HD</a></li>

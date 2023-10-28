@@ -1,5 +1,5 @@
 <aside class="aside-right">
-    <h1>BUSCAR PELÍCULA POR FORMATO</h1>
+    <h2>BUSCAR PELÍCULA POR FORMATO</h2>
     <ul>
         <li><a href="buscar.php?format=4k">4K</a></li>
         <li><a href="buscar.php?format=bdremux-1080p">BDREMUX 1080P</a></li>
