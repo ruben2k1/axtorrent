@@ -43,6 +43,13 @@ header {
     }
 }
 
+@media screen and (max-width: 920px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+}
+
 .bi-brightness-high-fill {
     color: yellow;
 }
