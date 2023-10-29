@@ -242,42 +242,30 @@ header {
     transition: 200ms;
 }
 
-.main-form {
+.contact {
     display: flex;
-    flex-direction: column;
+    margin-top: 5rem;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.main-form form {
-    text-align: center;
+.contact p {
+    font-weight: 700;
 }
 
-.main-form label {
-    display: inline-block;
-    margin: .5rem 0 1rem .5rem;
-}
-
-.main-form label i {
-    font-size: 1.5rem;
-}
-
-.input-text, textarea {
-    padding: 5px;
-    resize: none;
-}
-
-.main-form form button {
-    border: 1px solid black;
+.contact a {
+    text-decoration: none;
+    font-weight: bold;
     background-color: black;
-    padding: .75rem;
-    border-radius: .5rem;
+    border: 1px solid black;
+    border-radius: .75rem;
     color: white;
-    cursor: pointer;
-    margin-top: .5rem;
+    padding: 1rem;
 }
 
-.main-form form button:hover {
+.contact a:hover {
     transition: 200ms;
     background-color: white;
-    color: black;
+    color: black
 }

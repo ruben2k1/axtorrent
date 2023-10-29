@@ -18,35 +18,22 @@
     </script>
 </head>
 <body>
-    <?php
-        require('app/views/partials/header.php');
-    ?>
+    <?php require('app/views/partials/header.php'); ?>
 
     <div class="container">
-        <?php
-            require('app/views/partials/aside-left.php');
-        ?>
+        <?php require('app/views/partials/aside-left.php'); ?>
 
         <main>
             <div class="main-h2">
                 <h2>CONTACTO</h2>
             </div>
-            <div class="main-form">
-                <form action="app/controllers/processContacto.php" method="post">
-                    <label for="nombre"><i class="bi bi-person-vcard"></i></label><br>
-                    <input type="text" name="nombre" class="input-text" maxlength="25" required placeholder="Nombre"><br>
-                    <label for="correo"><i class="bi bi-envelope"></i></label><br>
-                    <input type="email" name="correo" class="input-text" maxlength="50" required placeholder="Correo electrónico"><br>
-                    <label for="mensaje"><i class="bi bi-chat-dots"></i></label><br>
-                    <textarea name="mensaje" class="input-text" cols="50" rows="10" maxlength="500" required placeholder="Si desea agregar más contenido o algo no está funcionando como debería, no dude en hacérnoslo saber"></textarea><br>
-                    <button type="submit"><i class="bi bi-send-check"></i></button>
-                </form>
+            <div class="contact">
+                <p>Para pedidos o enlaces rotos de películas y series, puede contactarnos por email</p>
+                <a href="mailto:ayudaaxtorrent@proton.me">ayudaaxtorrent@proton.me</a>
             </div>
         </main>
 
-        <?php
-            require('app/views/partials/aside-right.php');
-        ?>
+        <?php require('app/views/partials/aside-right.php'); ?>
     </div>
 </body>
 </html>
