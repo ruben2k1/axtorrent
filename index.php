@@ -35,7 +35,6 @@
         <?php require('app/views/partials/ad.php'); ?>
     </div>
 
-
     <div class="container">
         <?php require('app/views/partials/aside-left.php'); ?>
 
