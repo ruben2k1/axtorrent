@@ -60,17 +60,16 @@
                           </tr>
                         </thead>
                         <tbody>
-                          
-                            <?php
-                                foreach ($results3 as $result) {
-                                    echo "
-                                    <tr>
-                                        <td>{$result['EPISODE']}</td>
-                                        <td><a href='{$result['EXT_FILE_ROUTE']}' download>DESCARGAR</a></td>
-                                        <td>{$result['DATE']}</td>
-                                    </tr>";
-                                }
-                            ?>
+                        <?php
+                            foreach ($results3 as $result) {
+                                echo "
+                                <tr>
+                                    <td>{$result['EPISODE']}</td>
+                                    <td><a href='" . (isset($result['INT_FILE_ROUTE']) ? $result['INT_FILE_ROUTE'] : $result['EXT_FILE_ROUTE']) . "' download>DESCARGAR</a></td>
+                                    <td>{$result['DATE']}</td>
+                                </tr>";
+                            }
+                        ?>
                         </tbody>
                     </table>
                 </article>

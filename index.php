@@ -27,6 +27,7 @@
 
         gtag('config', 'G-K9PYVMMV1W');
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6966430727979372" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php require('app/views/partials/header.php'); ?>
