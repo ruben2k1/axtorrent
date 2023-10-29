@@ -31,6 +31,11 @@
 <body>
     <?php require('app/views/partials/header.php'); ?>
 
+    <div class="banner-1">
+        <?php require('app/views/partials/ad.php'); ?>
+    </div>
+
+
     <div class="container">
         <?php require('app/views/partials/aside-left.php'); ?>
 
