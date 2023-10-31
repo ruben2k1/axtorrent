@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9PYVMMV1W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -25,7 +26,6 @@
 
         gtag('config', 'G-K9PYVMMV1W');
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6966430727979372" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php require('app/views/partials/header.php'); ?>
