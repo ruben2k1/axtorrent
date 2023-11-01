@@ -44,10 +44,12 @@
             <div class="Wrapper-article">
                 <?php
                     foreach ($results1 as $result) {
+                        $urlEncoded = urlencode($result['TITLE']);
+
                         echo "
                         <article>
                             <ul>
-                                <li><a href='archivo.php?id={$result['ID']}'>{$result['TITLE']}</a></li>
+                                <li><a href='archivo.php?title={$urlEncoded}'>{$result['TITLE']}</a></li>
                             </ul>
                         </article>";
                     }

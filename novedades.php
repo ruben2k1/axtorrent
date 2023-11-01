@@ -36,10 +36,12 @@
             <div class="main-article">
                 <?php
                     foreach ($results1 as $result) {
+                        $urlEncoded = urlencode($result['TITLE']);
+
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo.php?title={$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }

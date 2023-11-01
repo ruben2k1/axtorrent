@@ -45,10 +45,12 @@
             <div class="main-article">
                 <?php
                     foreach ($results1 as $result) {
+                        $urlEncoded = urlencode($result['TITLE']);
+
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo.php?title={$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }
@@ -58,10 +60,12 @@
             <div class="main-article">
                 <?php
                     foreach ($results2 as $result) {
+                        $urlEncoded = urlencode($result['TITLE']);
+
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo.php?title={$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }
@@ -71,10 +75,12 @@
             <div class="main-article">
                 <?php
                     foreach ($results3 as $result) {
+                        $urlEncoded = urlencode($result['TITLE']);
+
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo.php?title={$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }
@@ -84,10 +90,12 @@
             <div class="main-article">
                 <?php
                     foreach ($results4 as $result) {
+                        $urlEncoded = urlencode($result['TITLE']);
+                        
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo.php?title={$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }
@@ -95,9 +103,7 @@
             </div>
         </main>
 
-        <?php
-            require('app/views/partials/aside-right.php');
-        ?>
+        <?php require('app/views/partials/aside-right.php'); ?>
     </div>
 </body>
 </html>

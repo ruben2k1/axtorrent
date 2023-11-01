@@ -3,15 +3,15 @@
 
     $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
-    if (!isset($_GET['id']) || empty($_GET['id'])) {
+    if (!isset($_GET['title']) || empty($_GET['title'])) {
         header('Location: index.php');
         die();
     }
 
-    $id = $_GET['id'];
+    $title = urldecode($_GET['title']);
 
-    $sentence1 = $db->prepare("SELECT * FROM files WHERE ID = ?");
-    $sentence1->bindParam(1, $id);
+    $sentence1 = $db->prepare("SELECT * FROM files WHERE TITLE = ?");
+    $sentence1->bindParam(1, $title);
     $sentence1->execute();
     $results1 = $sentence1->fetch();
 
@@ -19,6 +19,8 @@
         header('Location: index.php');
         die();
     }
+
+    $id = $results1['ID'];
 
     $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM episodes WHERE FILE_ID = ?");
     $sentence2->bindParam(1, $id);
