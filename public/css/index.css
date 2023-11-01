@@ -200,10 +200,25 @@ header {
     padding: 1rem;
 }
 
-.container main .main-article ul {
+.container main .Wrapper-article {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    gap: 1.25rem;
+    padding: 1rem;
+}
+
+.container main .Wrapper-article ul {
     gap: 1.5rem;
     font-weight: bold;
+}
+
+.container main .Wrapper-article ul li a {
+    color: black;
+}
+
+.container main .Wrapper-article ul li a:hover {
+    opacity: .5;
 }
 
 .container main .main-article table {
@@ -221,14 +236,19 @@ header {
     border-bottom: 2px solid black; 
 }
 
-.container main ul {
+.container main .main-article ul li {
+    font-weight: bold;
+}
+
+.container main .pagination {
     display: flex;
     justify-content: center;
+    gap: .5rem;
     position: relative;
     padding: 1.5rem;
 }
 
-.container main ul li a {
+.container main .pagination li a {
     text-decoration: none;
     color: black;
     border: 1px solid black;
@@ -236,7 +256,7 @@ header {
     border-radius: .25rem;
 }
 
-.container main ul li a:hover {
+.container main .pagination li a:hover {
     color: white;
     background-color: black;
     transition: 200ms;

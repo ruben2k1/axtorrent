@@ -41,34 +41,34 @@
             <div class="main-h2">
                 <h2>BUSCAR: <?php echo $type ?? $title ?? $format ?></h2>
             </div>
-            <div class="main-article">
+            <div class="Wrapper-article">
                 <?php
                     foreach ($results1 as $result) {
                         echo "
-                        <div class='main-article'>
-                            <article>
-                                <a href='archivo.php?id={$result['ID']}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
-                            </article>
-                        </div>";
+                        <article>
+                            <ul>
+                                <li><a href='archivo.php?id={$result['ID']}'>{$result['TITLE']}</a></li>
+                            </ul>
+                        </article>";
                     }
                 ?>
             </div>
-            <ul>
-            <?php 
-                for ($i = $minPage; $i <= $maxPage; $i++) {
-                    if (isset($type)) {
-                        $param = "type={$type}";
-                    } elseif (isset($title)) {
-                        $param = "title={$title}";
-                    } elseif (isset($format)) {
-                        $param = "format={$format}";
-                    } else {
-                        $param = "";
-                    }
+            <ul class="pagination">
+                <?php 
+                    for ($i = $minPage; $i <= $maxPage; $i++) {
+                        if (isset($type)) {
+                            $param = "type={$type}";
+                        } elseif (isset($title)) {
+                            $param = "title={$title}";
+                        } elseif (isset($format)) {
+                            $param = "format={$format}";
+                        } else {
+                            $param = "";
+                        }
 
-                    echo "<li><a href='buscar.php?$param&page=$i'>$i</a></li>";
-                }
-            ?>
+                        echo "<li><a href='buscar.php?$param&page=$i'>$i</a></li>";
+                    }
+                ?>
             </ul>
         </main>
 
