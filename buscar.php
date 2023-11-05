@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar: <?php echo $type ?? $title ?? $format ?> - AXTorrent</title>
     <meta name="description" content="Buscar: <?php echo $type ?? $title ?? $format ?> - AXTorrent">
+    <link rel="canonical" href="https://axtorrent.com/buscar.php?title=<?php echo urlencode($title); ?>">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://axtorrent.com">
     <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">

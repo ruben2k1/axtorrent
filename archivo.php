@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargar <?php echo $results1['TITLE']; ?> - AXTorrent</title>
     <meta name="description" content="Descargar <?php echo $results1['TITLE']; ?>">
+    <link rel="canonical" href="https://axtorrent.com/archivo.php?title=<?php echo urlencode($results1['TITLE']); ?>">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://axtorrent.com">
     <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">
