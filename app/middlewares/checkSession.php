@@ -3,5 +3,6 @@
 
     if (!isset($_SESSION['isLogged'])) {
         header('Location: login.php');
+        die();
     }
 ?>
