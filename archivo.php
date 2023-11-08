@@ -1,4 +1,4 @@
-<?php require('app/controllers/archivoController.php'); ?>
+<?php require_once('app/controllers/archivoController.php'); ?>
 
 <!DOCTYPE html>
 <html lang="es">

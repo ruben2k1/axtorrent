@@ -19,14 +19,14 @@
     </script>
 </head>
 <body>
-    <?php require('app/views/partials/header.php'); ?>
+    <?php require_once('app/views/partials/header.php'); ?>
 
     <div class="banner-1">
-        <?php require('app/views/partials/ad.php'); ?>
+        <?php require_once('app/views/partials/ad.php'); ?>
     </div>
 
     <div class="container">
-        <?php require('app/views/partials/aside-left.php'); ?>
+        <?php require_once('app/views/partials/aside-left.php'); ?>
 
         <main>
             <div class="main-h2">
@@ -38,7 +38,7 @@
             </div>
         </main>
 
-        <?php require('app/views/partials/aside-right.php'); ?>
+        <?php require_once('app/views/partials/aside-right.php'); ?>
     </div>
 </body>
 </html>

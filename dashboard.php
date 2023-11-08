@@ -1,4 +1,4 @@
-<?php require('app/middlewares/checkSession.php'); ?>
+<?php require_once('app/middlewares/checkSession.php'); ?>
 
 <!DOCTYPE html>
 <html lang="es">

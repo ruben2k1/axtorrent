@@ -1,4 +1,4 @@
-<?php require('app/controllers/buscarController.php'); ?>
+<?php require_once('app/controllers/buscarController.php'); ?>
 
 <!DOCTYPE html>
 <html lang="es">

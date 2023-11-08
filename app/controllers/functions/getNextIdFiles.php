@@ -1,5 +1,5 @@
 <?php
-    require('../../database/db.php');
+    require_once('../../database/db.php');
 
     $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
