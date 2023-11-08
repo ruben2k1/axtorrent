@@ -17,7 +17,7 @@
     if (empty($genre) && empty($director) && empty($cast)) {
         //Subir SERIE, DOCUMENTAL
         
-        $sentence1 = $db->prepare("INSERT INTO FILES (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?)");
+        $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?)");
         $sentence1->bindParam(1, $title);
         $sentence1->bindParam(2, $description);
         $sentence1->bindParam(3, $type);
@@ -43,7 +43,7 @@
                 $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                 $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
     
-                $sentence2 = $db->prepare("INSERT INTO EPISODES (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
                 $sentence2->bindParam(1, $lastEpisodeId);
                 $sentence2->bindParam(2, $episode_titles[$i]);
                 $sentence2->bindParam(3, $int_file);
@@ -63,7 +63,7 @@
     } elseif (empty($description) && empty($director) && empty($format) && empty($cast)) {
         //Subir VIDEOJUEGO
         
-        $sentence1 = $db->prepare("INSERT INTO FILES (TITLE, TYPE, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?)");
+        $sentence1 = $db->prepare("INSERT INTO files (TITLE, TYPE, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?)");
         $sentence1->bindParam(1, $title);
         $sentence1->bindParam(2, $type);
         $sentence1->bindParam(3, $ext_img_route);
@@ -87,7 +87,7 @@
                 $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                 $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
     
-                $sentence2 = $db->prepare("INSERT INTO EPISODES (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
                 $sentence2->bindParam(1, $lastEpisodeId);
                 $sentence2->bindParam(2, $episode_titles[$i]);
                 $sentence2->bindParam(3, $int_file);
@@ -107,7 +107,7 @@
     }else {
         //Subir PELICULA
 
-        $sentence1 = $db->prepare("INSERT INTO FILES (TITLE, DESCRIPTION, TYPE, GENRE, FORMAT, DIRECTOR, CAST, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, GENRE, FORMAT, DIRECTOR, CAST, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $sentence1->bindParam(1, $title);
         $sentence1->bindParam(2, $description);
         $sentence1->bindParam(3, $type);
@@ -136,7 +136,7 @@
                 $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                 $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
     
-                $sentence2 = $db->prepare("INSERT INTO EPISODES (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
                 $sentence2->bindParam(1, $lastEpisodeId);
                 $sentence2->bindParam(2, $episode_titles[$i]);
                 $sentence2->bindParam(3, $int_file);
