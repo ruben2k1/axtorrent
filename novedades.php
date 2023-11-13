@@ -17,10 +17,6 @@
 <body>
     <?php require_once('app/views/partials/header.php'); ?>
 
-    <div class="banner-1">
-        <?php require_once('app/views/partials/ad.php'); ?>
-    </div>
-
     <div class="container">
         <?php require_once('app/views/partials/aside-left.php'); ?>
 
