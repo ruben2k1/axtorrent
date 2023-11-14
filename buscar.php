@@ -65,9 +65,7 @@
             </ul>
         </main>
 
-        <?php
-            require('app/views/partials/aside-right.php');
-        ?>
+        <?php require('app/views/partials/aside-right.php'); ?>
     </div>
 </body>
 </html>
