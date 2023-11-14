@@ -3,7 +3,43 @@
 
     $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
-    if (isset($_GET['tipo']) && !empty($_GET['tipo'])) {
+
+    if (isset($_GET['titulo']) && !empty($_GET['titulo'])) {
+        $titulo = $_GET['titulo'];
+        $page = $_GET['page'] ?? 1;
+        $offset = ($page - 1) * 20;
+
+        $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
+        $tituloParam = "%$titulo%";
+        $sentence2->bindParam(1, $tituloParam);
+        $sentence2->execute();
+        $totalResults = $sentence2->fetchColumn();
+
+        if ($totalResults === 0) {
+            header('Location: index.php');
+            die();
+        }
+    
+        $totalPages = ceil($totalResults / 20);
+    
+        $minPage = max(1, $page - 3);
+        $maxPage = min($totalPages, $page + 3);
+
+        if ($page > $totalPages) {
+            $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
+            header("Location: buscar.php?$redirectParam&page=$totalPages");
+            die();
+        }
+
+        $sentence1 = $db->prepare("SELECT * FROM files WHERE LOWER(TITLE) LIKE LOWER(?) LIMIT 20 OFFSET ?");
+        $sentence1->bindParam(1, $tituloParam);
+        $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
+        $sentence1->execute();
+        $results1 = $sentence1->fetchAll();
+    }
+
+
+    /*if (isset($_GET['tipo']) && !empty($_GET['tipo'])) {
         $tipo = $_GET['tipo'];
 
         if ($tipo==='series') {
@@ -459,5 +495,8 @@
             header('Location: index.php');
             die();
         }
-    }
+    }else {
+        header('Location: index.php');
+        die();
+    }*/
 ?>
