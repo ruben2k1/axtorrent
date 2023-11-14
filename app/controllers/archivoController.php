@@ -3,12 +3,12 @@
 
     $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
-    if (!isset($_GET['title']) || empty($_GET['title'])) {
+    if (!isset($_GET['titulo']) || empty($_GET['titulo'])) {
         header('Location: index.php');
         die();
     }
 
-    $title = urldecode($_GET['title']);
+    $title = urldecode($_GET['titulo']);
 
     $sentence1 = $db->prepare("SELECT * FROM files WHERE TITLE = ?");
     $sentence1->bindParam(1, $title);

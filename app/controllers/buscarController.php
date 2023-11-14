@@ -258,13 +258,13 @@
             header('Location: index.php');
             die();
         }
-    } elseif (isset($_GET['title']) && !empty($_GET['title'])) {
-        $title = $_GET['title'];
+    } elseif (isset($_GET['titulo']) && !empty($_GET['titulo'])) {
+        $titulo = $_GET['titulo'];
         $page = $_GET['page'] ?? 1;
         $offset = ($page - 1) * 20;
 
         $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
-        $tituloParam = "%$title%";
+        $tituloParam = "%$titulo%";
         $sentence2->bindParam(1, $tituloParam);
         $sentence2->execute();
         $totalResults = $sentence2->fetchColumn();
@@ -280,7 +280,7 @@
         $maxPage = min($totalPages, $page + 3);
 
         if ($page > $totalPages) {
-            $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+            $redirectParam = isset($type) ? "type={$type}" : "titulo={$titulo}";
             header("Location: buscar.php?$redirectParam&page=$totalPages");
             die();
         }
