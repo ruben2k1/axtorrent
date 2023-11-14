@@ -7,8 +7,8 @@
         $tipo = $_GET['tipo'];
 
         if ($tipo==='series') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
     
             $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "SERIE";
@@ -18,12 +18,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -34,8 +34,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='series-hd') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "HDTV-720p";
             $typeParam2 = "BluRay-1080p";
@@ -54,12 +54,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -73,8 +73,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='peliculas') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
     
             $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "PELICULA";
@@ -84,12 +84,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -100,8 +100,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='peliculas-hd') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "HDTV-720p";
             $typeParam2 = "BluRay-1080p";
@@ -122,12 +122,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -142,8 +142,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='peliculas-4k') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "HDTV-720p";
             $typeParam2 = "BluRay-1080p";
@@ -159,12 +159,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -174,8 +174,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='videojuegos') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
     
             $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "VIDEOJUEGO";
@@ -185,12 +185,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -201,8 +201,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='documentales') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
     
             $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "DOCUMENTAL";
@@ -212,12 +212,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -228,8 +228,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($tipo==='musica') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
     
             $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE UPPER(TYPE) LIKE UPPER(?)");
             $typeParam = "MUSICA";
@@ -239,12 +239,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -260,8 +260,8 @@
         }
     } elseif (isset($_GET['titulo']) && !empty($_GET['titulo'])) {
         $titulo = $_GET['titulo'];
-        $page = $_GET['page'] ?? 1;
-        $offset = ($page - 1) * 20;
+        $pagina = $_GET['pagina'] ?? 1;
+        $offset = ($pagina - 1) * 20;
 
         $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
         $tituloParam = "%$titulo%";
@@ -276,12 +276,12 @@
     
         $totalPages = ceil($totalResults / 20);
     
-        $minPage = max(1, $page - 3);
-        $maxPage = min($totalPages, $page + 3);
+        $minPage = max(1, $pagina - 3);
+        $maxPage = min($totalPages, $pagina + 3);
 
-        if ($page > $totalPages) {
+        if ($pagina > $totalPages) {
             $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-            header("Location: buscar.php?$redirectParam&page=$totalPages");
+            header("Location: buscar.php?$redirectParam&pagina=$totalPages");
             die();
         }
 
@@ -294,8 +294,8 @@
         $formato = $_GET['formato'];
 
         if ($formato === '4k') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "4K";
     
@@ -306,12 +306,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -321,8 +321,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($formato === 'bdremux-1080p') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "BDremux-1080p";
     
@@ -333,12 +333,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -348,8 +348,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($formato === 'blueray-1080p') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "BluRay-1080p";
     
@@ -360,12 +360,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -375,8 +375,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($formato === 'blueray-720p') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "BluRay-720p";
     
@@ -387,12 +387,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -402,8 +402,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($formato === 'microhd-1080p') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "MicroHD-1080p";
     
@@ -414,12 +414,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     
@@ -429,8 +429,8 @@
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
         }elseif ($formato === 'microhd-720p') {
-            $page = $_GET['page'] ?? 1;
-            $offset = ($page - 1) * 20;
+            $pagina = $_GET['pagina'] ?? 1;
+            $offset = ($pagina - 1) * 20;
 
             $typeParam1 = "MicroHD-720p";
     
@@ -441,12 +441,12 @@
         
             $totalPages = ceil($totalResults / 20);
         
-            $minPage = max(1, $page - 3);
-            $maxPage = min($totalPages, $page + 3);
+            $minPage = max(1, $pagina - 3);
+            $maxPage = min($totalPages, $pagina + 3);
     
-            if ($page > $totalPages) {
+            if ($pagina > $totalPages) {
                 $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
-                header("Location: buscar.php?$redirectParam&page=$totalPages");
+                header("Location: buscar.php?$redirectParam&pagina=$totalPages");
                 die();
             }
     

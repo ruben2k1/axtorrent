@@ -59,7 +59,7 @@
                             $param = "";
                         }
 
-                        echo "<li><a href='buscar.php?$param&page=$i'>$i</a></li>";
+                        echo "<li><a href='buscar.php?$param&pagina=$i'>$i</a></li>";
                     }
                 ?>
             </ul>
