@@ -5,15 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar: <?php echo $type ?? $titulo ?? $format ?> - AXTorrent</title>
-    <meta name="description" content="Buscar: <?php echo $type ?? $titulo ?? $format ?> - AXTorrent">
+    <title>Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent</title>
+    <meta name="description" content="Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent">
     <link rel="canonical" href="https://axtorrent.com/buscar.php?titulo=<?php echo urlencode($titulo); ?>">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://axtorrent.com">
     <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Buscar: <?php echo $type ?? $titulo ?? $format ?> - AXTorrent">
-    <meta name="twitter:description" content="Buscar: <?php echo $type ?? $titulo ?? $format ?> - AXTorrent">
+    <meta name="twitter:title" content="Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent">
+    <meta name="twitter:description" content="Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent">
     <meta name="twitter:image" content="public/logo.svg">
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/index.css">
@@ -30,7 +30,7 @@
 
         <main>
             <div class="main-h2">
-                <h2>BUSCAR: <?php echo $type ?? $titulo ?? $format ?></h2>
+                <h2>BUSCAR: <?php echo $tipo ?? $titulo ?? $formato ?></h2>
             </div>
             <div class="Wrapper-article">
                 <?php
@@ -49,12 +49,12 @@
             <ul class="pagination">
                 <?php 
                     for ($i = $minPage; $i <= $maxPage; $i++) {
-                        if (isset($type)) {
-                            $param = "type={$type}";
+                        if (isset($tipo)) {
+                            $param = "tipo={$tipo}";
                         } elseif (isset($titulo)) {
                             $param = "titulo={$titulo}";
-                        } elseif (isset($format)) {
-                            $param = "format={$format}";
+                        } elseif (isset($formato)) {
+                            $param = "formato={$formato}";
                         } else {
                             $param = "";
                         }

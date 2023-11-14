@@ -8,10 +8,10 @@
         die();
     }
 
-    $title = urldecode($_GET['titulo']);
+    $titulo = urldecode($_GET['titulo']);
 
     $sentence1 = $db->prepare("SELECT * FROM files WHERE TITLE = ?");
-    $sentence1->bindParam(1, $title);
+    $sentence1->bindParam(1, $titulo);
     $sentence1->execute();
     $results1 = $sentence1->fetch();
 

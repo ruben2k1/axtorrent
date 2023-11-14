@@ -3,10 +3,10 @@
 
     $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
-    if (isset($_GET['type']) && !empty($_GET['type'])) {
-        $type = $_GET['type'];
+    if (isset($_GET['tipo']) && !empty($_GET['tipo'])) {
+        $tipo = $_GET['tipo'];
 
-        if ($type==='series') {
+        if ($tipo==='series') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
@@ -22,7 +22,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -33,7 +33,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='series-hd') {
+        }elseif ($tipo==='series-hd') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -58,7 +58,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -72,7 +72,7 @@
             $sentence1->bindParam(6, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='peliculas') {
+        }elseif ($tipo==='peliculas') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
@@ -88,7 +88,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -99,7 +99,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='peliculas-hd') {
+        }elseif ($tipo==='peliculas-hd') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -126,7 +126,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -141,7 +141,7 @@
             $sentence1->bindParam(7, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='peliculas-4k') {
+        }elseif ($tipo==='peliculas-4k') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -163,7 +163,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -173,7 +173,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='videojuegos') {
+        }elseif ($tipo==='videojuegos') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
@@ -189,7 +189,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -200,7 +200,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='documentales') {
+        }elseif ($tipo==='documentales') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
@@ -216,7 +216,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -227,7 +227,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($type==='musica') {
+        }elseif ($tipo==='musica') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
     
@@ -243,7 +243,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -280,7 +280,7 @@
         $maxPage = min($totalPages, $page + 3);
 
         if ($page > $totalPages) {
-            $redirectParam = isset($type) ? "type={$type}" : "titulo={$titulo}";
+            $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
             header("Location: buscar.php?$redirectParam&page=$totalPages");
             die();
         }
@@ -290,10 +290,10 @@
         $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
         $sentence1->execute();
         $results1 = $sentence1->fetchAll();
-    }elseif (isset($_GET['format']) && !empty($_GET['format'])) {
-        $format = $_GET['format'];
+    }elseif (isset($_GET['formato']) && !empty($_GET['formato'])) {
+        $formato = $_GET['formato'];
 
-        if ($format === '4k') {
+        if ($formato === '4k') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -310,7 +310,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -320,7 +320,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($format === 'bdremux-1080p') {
+        }elseif ($formato === 'bdremux-1080p') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -337,7 +337,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -347,7 +347,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($format === 'blueray-1080p') {
+        }elseif ($formato === 'blueray-1080p') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -364,7 +364,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -374,7 +374,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($format === 'blueray-720p') {
+        }elseif ($formato === 'blueray-720p') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -391,7 +391,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -401,7 +401,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($format === 'microhd-1080p') {
+        }elseif ($formato === 'microhd-1080p') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -418,7 +418,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -428,7 +428,7 @@
             $sentence1->bindParam(2, $offset, PDO::PARAM_INT);
             $sentence1->execute();
             $results1 = $sentence1->fetchAll();
-        }elseif ($format === 'microhd-720p') {
+        }elseif ($formato === 'microhd-720p') {
             $page = $_GET['page'] ?? 1;
             $offset = ($page - 1) * 20;
 
@@ -445,7 +445,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
+                $redirectParam = isset($tipo) ? "tipo={$tipo}" : "titulo={$titulo}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -459,8 +459,5 @@
             header('Location: index.php');
             die();
         }
-    }else {
-        header('Location: index.php');
-        die();
     }
 ?>
