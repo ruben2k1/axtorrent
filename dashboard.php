@@ -40,6 +40,8 @@
             <option value="BDremux-1080p">BDremux-1080p</option>
             <option value="4K">4K</option>
         </select><br>
+        <label for="release_date">Release date</label>
+        <input type="number" name="release_date" id=""><br>
         <label for="director">Director</label>
         <input type="text" name="director" id=""><br>
         <label for="cast">Cast</label>
