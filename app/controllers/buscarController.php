@@ -310,7 +310,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -337,7 +337,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -391,7 +391,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -418,7 +418,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
@@ -445,7 +445,7 @@
             $maxPage = min($totalPages, $page + 3);
     
             if ($page > $totalPages) {
-                $redirectParam = isset($type) ? "type={$type}" : "title={$title}";
+                $redirectParam = isset($type) ? "type={$type}" : "titulo={$title}";
                 header("Location: buscar.php?$redirectParam&page=$totalPages");
                 die();
             }
