@@ -1,4 +1,7 @@
-<?php require_once('app/controllers/buscarController.php'); ?>
+<?php
+    require_once('app/controllers/buscarController.php');
+    require_once('app/controllers/functions/cleanQueryParams.php');
+?>
 
 <!DOCTYPE html>
 <html lang="es">
