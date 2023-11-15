@@ -1,5 +1,6 @@
 <?php
     require_once('app/database/db.php');
+    require_once('app/controllers/functions/cleanQueryParams.php');
 
     $db = new Connection('localhost', 'axtorrent', 3307, 'root', 'EC5B09B113AC14D6FF0481665B469AA560CE662E7E87BF57C344FC4E03844B8C');
 
@@ -10,8 +11,9 @@
 
     $titulo = urldecode($_GET['titulo']);
 
-    $sentence1 = $db->prepare("SELECT * FROM files WHERE TITLE = ?");
-    $sentence1->bindParam(1, $titulo);
+    $sentence1 = $db->prepare("SELECT * FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
+    $tituloParam = "%$titulo%";
+    $sentence1->bindParam(1, $tituloParam);
     $sentence1->execute();
     $results1 = $sentence1->fetch();
 
@@ -19,7 +21,7 @@
         header('Location: index.php');
         die();
     }
-
+    
     $id = $results1['ID'];
 
     $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM episodes WHERE FILE_ID = ?");
