@@ -95,6 +95,10 @@
                 document.getElementById('episodes').appendChild(episodeDiv);
             });
         });
+
+        document.getElementById('add').addEventListener('click', () => {
+            
+        })
     </script>
 </body>
 </html>
