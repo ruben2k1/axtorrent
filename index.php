@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AXTorrent - Descargar Películas y Series Gratis en Español</title>
     <meta name="description" content="AXTorrent - Descargar y Ver Estrenos de Series y Pelis Torrent Gratis en Español. 4K, HD, VOSE y gran variedad de géneros sin publicidad">
-    <link rel="canonical" href="https://www.axtorrent.com/">
+    <link rel="canonical" href="https://axtorrent.com">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://axtorrent.com">
     <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">
