@@ -35,7 +35,7 @@ CREATE TABLE episodes(
     EPISODE TEXT,
     EXT_FILE_ROUTE TEXT,
     INT_FILE_ROUTE varchar(500),
-    DATE varchar(50),
+    DATE DATE,
     FILE_ID int,
     PRIMARY KEY (ID),
     FOREIGN KEY (FILE_ID) REFERENCES files(ID)
