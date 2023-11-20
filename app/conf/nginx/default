@@ -1,0 +1,39 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name www.axtorrent.com;
+    return 301 https://axtorrent.com$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/axtorrent;
+    index index.php index.html index.htm index.nginx-debian.html;
+    server_name axtorrent.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+    }
+}
+
+server {
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/axtorrent.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/axtorrent.com/privkey.pem;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    server_name axtorrent.com www.axtorrent.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
