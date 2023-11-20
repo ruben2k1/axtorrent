@@ -42,12 +42,11 @@
                     $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                     $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
         
-                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?)");
                     $sentence2->bindParam(1, $lastEpisodeId);
                     $sentence2->bindParam(2, $episode_titles[$i]);
                     $sentence2->bindParam(3, $int_file);
-                    $sentence2->bindParam(4, $episode_dates[$i]);
-                    $sentence2->bindParam(5, $file_id);
+                    $sentence2->bindParam(4, $file_id);
                     $sentence2->execute();
         
                     $rutaDestino = "../../public/files/" . $lastEpisodeId . '.torrent';

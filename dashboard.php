@@ -66,8 +66,6 @@
             <input type="text" name="episode_title[]" id=""><br>
             <label for="episode_int_file_route">Internal file route</label>
             <input type="file" name="episode_int_file_route[]" id=""><br>
-            <label for="episode_date">Date</label>
-            <input type="date" name="episode_date[]" id=""><br>
 
             <div id="episodes"></div>
 
@@ -88,9 +86,7 @@
                 <label for="episode_title">Title</label>
                 <input type="text" name="episode_title[]" id=""><br>
                 <label for="episode_int_file_route">Internal file route</label>
-                <input type="file" name="episode_int_file_route[]" id=""><br>
-                <label for="episode_date">Date</label>
-                <input type="date" name="episode_date[]" id=""><br>`;
+                <input type="file" name="episode_int_file_route[]" id=""><br>`;
                 
                 document.getElementById('episodes').appendChild(episodeDiv);
             });
