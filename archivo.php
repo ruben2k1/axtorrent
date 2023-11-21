@@ -53,11 +53,13 @@
                         <tbody>
                         <?php
                             foreach ($results3 as $result) {
+                                $formattedDate = date('d-m-Y', strtotime($result['DATE']));
+
                                 echo "
                                 <tr>
                                     <td>{$result['EPISODE']}</td>
                                     <td><a href='" . (isset($result['INT_FILE_ROUTE']) ? $result['INT_FILE_ROUTE'] : $result['EXT_FILE_ROUTE']) . "' rel='nofollow' download>DESCARGAR</a></td>
-                                    <td>{$result['DATE']}</td>
+                                    <td>{$formattedDate}</td>
                                 </tr>";
                             }
                         ?>
