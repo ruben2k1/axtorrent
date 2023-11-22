@@ -181,12 +181,15 @@ header {
     justify-content: center;
 }
 
-.container main .main-h1 {
+.container main .Wrapper-h1 {
     display: flex;
     justify-content: center;
-    font-weight: bold;
-    font-size: large;
     margin-bottom: 1rem;
+}
+
+.container main .Wrapper-h1 h1 {
+    font-size: large;
+    font-weight: bold;
     border: 2px solid black;
     border-radius: 2rem;
     padding: .75rem;

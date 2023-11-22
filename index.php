@@ -29,8 +29,8 @@
         <?php require_once('app/views/partials/aside-left.php'); ?>
 
         <main>
-            <div class="main-h2">
-                <h2>ÚLTIMOS TORRENTS</h2>
+            <div class="Wrapper-h1">
+                <h1>DESCARGAR TORRENTS</h1>
             </div>
             <h3>SERIES</h3>
             <div class="main-article">
