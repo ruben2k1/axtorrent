@@ -54,10 +54,11 @@
                         <?php
                             foreach ($results3 as $result) {
                                 $formattedDate = date('d-m-Y', strtotime($result['DATE']));
-
+                                $episode = isset($result['EPISODE']) ? $result['EPISODE'] : 'N/A';
+                                
                                 echo "
                                 <tr>
-                                    <td>{$result['EPISODE']}</td>
+                                    <td>{$episode}</td>
                                     <td><a href='" . (isset($result['INT_FILE_ROUTE']) ? $result['INT_FILE_ROUTE'] : $result['EXT_FILE_ROUTE']) . "' rel='nofollow' download>DESCARGAR</a></td>
                                     <td>{$formattedDate}</td>
                                 </tr>";
