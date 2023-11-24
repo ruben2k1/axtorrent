@@ -58,7 +58,7 @@
                                 echo "
                                 <tr>
                                     <td>{$result['EPISODE']}</td>
-                                    <td><a href='" . (isset($result['MAGNET_FILE_ROUTE']) ? $result['MAGNET_FILE_ROUTE'] : $result['INT_FILE_ROUTE']) . "' rel='nofollow' download>DESCARGAR</a></td>
+                                    <td><a href='" . $result['OUO_FILE_ROUTE'] . "' rel='nofollow' target='_blank' download>DESCARGAR</a></td>
                                     <td>{$formattedDate}</td>
                                 </tr>";
                             }
