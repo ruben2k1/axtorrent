@@ -1,6 +1,7 @@
 <?php
     require_once('app/controllers/buscarController.php');
     require_once('app/controllers/functions/cleanQueryParams.php');
+    $paginaParam = isset($pagina) && $pagina != 1 ? "&pagina=$pagina" : '';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent</title>
     <meta name="description" content="Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent">
-    <link rel="canonical" href="https://axtorrent.com/buscar.php?titulo=<?php echo urlencode($titulo); ?>">
+    <link rel="canonical" href="https://axtorrent.com/buscar.php?<?php echo $param . '=' . urlencode($tipo ?? $titulo ?? $formato) . $paginaParam ?>">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://axtorrent.com">
     <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">

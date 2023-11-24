@@ -6,7 +6,8 @@
 
     if (isset($_GET['tipo']) && !empty($_GET['tipo'])) {
         $tipo = $_GET['tipo'];
-
+        $param = 'tipo';
+        
         if ($tipo==='series') {
             $pagina = $_GET['pagina'] ?? 1;
             $offset = ($pagina - 1) * 20;
@@ -263,7 +264,7 @@
         $titulo = $_GET['titulo'];
         $pagina = $_GET['pagina'] ?? 1;
         $offset = ($pagina - 1) * 20;
-
+        $param = 'titulo';
         $tituloLimpio = cleanQueryParam($titulo);
 
         $sentence2 = $db->prepare("SELECT COUNT(*) AS COUNT FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
@@ -295,6 +296,7 @@
         $results1 = $sentence1->fetchAll();
     }elseif (isset($_GET['formato']) && !empty($_GET['formato'])) {
         $formato = $_GET['formato'];
+        $param = 'formato';
 
         if ($formato === '4k') {
             $pagina = $_GET['pagina'] ?? 1;
