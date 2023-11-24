@@ -12,17 +12,19 @@
     $director = $_POST['director'];
     $cast = $_POST['cast'];
     $ext_img_route = $_POST['ext_img_route'];
+    $release_date = $_POST['release_date'];
     $userid = 1;
 
     switch ($type) {
         case 'SERIE':
-            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?)");
+            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, RELEASE_DATE, UPLOAD_DATE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
             $sentence1->bindParam(1, $title);
             $sentence1->bindParam(2, $description);
             $sentence1->bindParam(3, $type);
             $sentence1->bindParam(4, $format);
             $sentence1->bindParam(5, $ext_img_route);
-            $sentence1->bindParam(6, $userid);
+            $sentence1->bindParam(6, $release_date);
+            $sentence1->bindParam(7, $userid);
             $sentence1->execute();
 
             $file_id = intval($db->lastInsertId());
@@ -37,16 +39,19 @@
                 for($i = 0; $i < $numArchivos; $i++) {
                     $lastEpisodeId = getNextIdEpisodes($db);
                     $int_file = 'public/files/' . $lastEpisodeId . '.torrent';
-                                    
+                    $url = 'http://ouo.io/api/seL94TsR?s=' . 'https://axtorrent.com/' . $int_file;
+                    $ouo_file_route = file_get_contents($url);
+                
                     $nombreArchivo = $_FILES['episode_int_file_route']['name'][$i];
                     $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                     $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
         
-                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?)");
+                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, OUO_FILE_ROUTE, INT_FILE_ROUTE, UPLOAD_DATE, FILE_ID) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
                     $sentence2->bindParam(1, $lastEpisodeId);
                     $sentence2->bindParam(2, $episode_titles[$i]);
-                    $sentence2->bindParam(3, $int_file);
-                    $sentence2->bindParam(4, $file_id);
+                    $sentence2->bindParam(3, $ouo_file_route);
+                    $sentence2->bindParam(4, $int_file);
+                    $sentence2->bindParam(5, $file_id);
                     $sentence2->execute();
         
                     $rutaDestino = "../../public/files/" . $lastEpisodeId . '.torrent';
@@ -59,7 +64,7 @@
             header('Location: ../../dashboard.php');
             break;
         case 'PELICULA':
-            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, GENRE, FORMAT, DIRECTOR, CAST, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, GENRE, FORMAT, DIRECTOR, CAST, EXT_IMG_ROUTE, RELEASE_DATE, UPLOAD_DATE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
             $sentence1->bindParam(1, $title);
             $sentence1->bindParam(2, $description);
             $sentence1->bindParam(3, $type);
@@ -68,7 +73,8 @@
             $sentence1->bindParam(6, $director);
             $sentence1->bindParam(7, $cast);
             $sentence1->bindParam(8, $ext_img_route);
-            $sentence1->bindParam(9, $userid);
+            $sentence1->bindParam(9, $release_date);
+            $sentence1->bindParam(10, $userid);
             $sentence1->execute();
     
             $file_id = intval($db->lastInsertId());
@@ -83,16 +89,18 @@
                 for($i = 0; $i < $numArchivos; $i++) {
                     $lastEpisodeId = getNextIdEpisodes($db);
                     $int_file = 'public/files/' . $lastEpisodeId . '.torrent';
-                                    
+                    $url = 'http://ouo.io/api/seL94TsR?s=' . 'https://axtorrent.com/' . $int_file;
+                    $ouo_file_route = file_get_contents($url);
+                        
                     $nombreArchivo = $_FILES['episode_int_file_route']['name'][$i];
                     $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                     $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
         
-                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, OUO_FILE_ROUTE, INT_FILE_ROUTE, UPLOAD_DATE, FILE_ID) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
                     $sentence2->bindParam(1, $lastEpisodeId);
                     $sentence2->bindParam(2, $episode_titles[$i]);
-                    $sentence2->bindParam(3, $int_file);
-                    $sentence2->bindParam(4, $episode_dates[$i]);
+                    $sentence2->bindParam(3, $ouo_file_route);
+                    $sentence2->bindParam(4, $int_file);
                     $sentence2->bindParam(5, $file_id);
                     $sentence2->execute();
         
@@ -106,13 +114,14 @@
             header('Location: ../../dashboard.php');
             break;
         case 'DOCUMENTAL':
-            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?, ?, ?)");
+            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, RELEASE_DATE, UPLOAD_DATE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
             $sentence1->bindParam(1, $title);
             $sentence1->bindParam(2, $description);
             $sentence1->bindParam(3, $type);
             $sentence1->bindParam(4, $format);
             $sentence1->bindParam(5, $ext_img_route);
-            $sentence1->bindParam(6, $userid);
+            $sentence1->bindParam(6, $release_date);
+            $sentence1->bindParam(7, $userid);
             $sentence1->execute();
 
             $file_id = intval($db->lastInsertId());
@@ -127,16 +136,18 @@
                 for($i = 0; $i < $numArchivos; $i++) {
                     $lastEpisodeId = getNextIdEpisodes($db);
                     $int_file = 'public/files/' . $lastEpisodeId . '.torrent';
-                                    
+                    $url = 'http://ouo.io/api/seL94TsR?s=' . 'https://axtorrent.com/' . $int_file;
+                    $ouo_file_route = file_get_contents($url);
+                         
                     $nombreArchivo = $_FILES['episode_int_file_route']['name'][$i];
                     $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                     $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
         
-                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, OUO_FILE_ROUTE, INT_FILE_ROUTE, UPLOAD_DATE, FILE_ID) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
                     $sentence2->bindParam(1, $lastEpisodeId);
                     $sentence2->bindParam(2, $episode_titles[$i]);
-                    $sentence2->bindParam(3, $int_file);
-                    $sentence2->bindParam(4, $episode_dates[$i]);
+                    $sentence2->bindParam(3, $ouo_file_route);
+                    $sentence2->bindParam(4, $int_file);
                     $sentence2->bindParam(5, $file_id);
                     $sentence2->execute();
         
@@ -150,11 +161,12 @@
             header('Location: ../../dashboard.php');
             break;
         case 'VIDEOJUEGO':
-            $sentence1 = $db->prepare("INSERT INTO files (TITLE, TYPE, EXT_IMG_ROUTE, USER_ID) VALUES (?, ?, ?, ?)");
+            $sentence1 = $db->prepare("INSERT INTO files (TITLE, TYPE, EXT_IMG_ROUTE, RELEASE_DATE, UPLOAD_DATE, USER_ID) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
             $sentence1->bindParam(1, $title);
             $sentence1->bindParam(2, $type);
             $sentence1->bindParam(3, $ext_img_route);
-            $sentence1->bindParam(4, $userid);
+            $sentence1->bindParam(4, $release_date);
+            $sentence1->bindParam(5, $userid);
             $sentence1->execute();
     
             $file_id = intval($db->lastInsertId());
@@ -169,16 +181,18 @@
                 for($i = 0; $i < $numArchivos; $i++) {
                     $lastEpisodeId = getNextIdEpisodes($db);
                     $int_file = 'public/files/' . $lastEpisodeId . '.torrent';
-                                    
+                    $url = 'http://ouo.io/api/seL94TsR?s=' . 'https://axtorrent.com/' . $int_file;
+                    $ouo_file_route = file_get_contents($url);
+                
                     $nombreArchivo = $_FILES['episode_int_file_route']['name'][$i];
                     $tipoArchivo = $_FILES['episode_int_file_route']['type'][$i];
                     $tmpNombre = $_FILES['episode_int_file_route']['tmp_name'][$i];
         
-                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, INT_FILE_ROUTE, DATE, FILE_ID) VALUES (?, ?, ?, ?, ?)");
+                    $sentence2 = $db->prepare("INSERT INTO episodes (ID, EPISODE, OUO_FILE_ROUTE, INT_FILE_ROUTE, UPLOAD_DATE, FILE_ID) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
                     $sentence2->bindParam(1, $lastEpisodeId);
                     $sentence2->bindParam(2, $episode_titles[$i]);
-                    $sentence2->bindParam(3, $int_file);
-                    $sentence2->bindParam(4, $episode_dates[$i]);
+                    $sentence2->bindParam(3, $ouo_file_route);
+                    $sentence2->bindParam(4, $int_file);
                     $sentence2->bindParam(5, $file_id);
                     $sentence2->execute();
         

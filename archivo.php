@@ -53,7 +53,7 @@
                         <tbody>
                         <?php
                             foreach ($results3 as $result) {
-                                $formattedDate = date('d-m-Y', strtotime($result['DATE']));                                
+                                $formattedDate = date('d-m-Y', strtotime($result['UPLOAD_DATE']));                                
                                 
                                 echo "
                                 <tr>
