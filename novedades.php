@@ -21,8 +21,8 @@
         <?php require_once('app/views/partials/aside-left.php'); ?>
 
         <main>
-            <div class="main-h2">
-                <h2>NOVEDADES</h2>
+            <div class="Wrapper-h1">
+                <h1>NOVEDADES</h1>
             </div>
             <div class="main-article">
                 <?php

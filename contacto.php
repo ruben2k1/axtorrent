@@ -19,8 +19,8 @@
         <?php require_once('app/views/partials/aside-left.php'); ?>
 
         <main>
-            <div class="main-h2">
-                <h2>CONTACTO</h2>
+            <div class="Wrapper-h1">
+                <h1>CONTACTO</h1>
             </div>
             <div class="contact">
                 <p>Para pedidos o enlaces rotos de películas y series, puede contactarnos por email</p>

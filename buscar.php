@@ -32,8 +32,8 @@
         <?php require('app/views/partials/aside-left.php'); ?>
 
         <main>
-            <div class="main-h2">
-                <h2>BUSCAR: <?php echo $tipo ?? $titulo ?? $formato ?></h2>
+            <div class="Wrapper-h1">
+                <h1>BUSCAR: <?php echo $tipo ?? $titulo ?? $formato ?></h1>
             </div>
             <div class="Wrapper-article">
                 <?php

@@ -176,11 +176,6 @@ header {
     text-decoration: underline;
 }
 
-.container main .main-h2 {
-    display: flex;
-    justify-content: center;
-}
-
 .container main .Wrapper-h1 {
     display: flex;
     justify-content: center;
@@ -195,12 +190,21 @@ header {
     padding: .75rem;
 }
 
+.container main .Wrapper-h2 {
+    display: flex;
+    justify-content: center;
+}
+
 .container main .main-article {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: .5rem;
     padding: 1rem;
+}
+
+.container main .main-article a img {
+    max-width: 200px;
 }
 
 .container main .Wrapper-article {
