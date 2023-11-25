@@ -12,7 +12,7 @@
     $director = $_POST['director'];
     $cast = $_POST['cast'];
     $ext_img_route = $_POST['ext_img_route'];
-    $release_date = $_POST['release_date'];
+    $release_date = !empty($_POST['release_date']) ? $_POST['release_date'] : null;
     $userid = 1;
 
     switch ($type) {
