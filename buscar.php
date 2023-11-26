@@ -44,7 +44,7 @@
                         echo "
                         <article>
                             <ul>
-                                <li><a href='archivo.php?titulo={$urlEncoded}'>{$result['TITLE']}</a></li>
+                                <li><a href='/archivo.php?titulo={$urlEncoded}'>{$result['TITLE']}</a></li>
                             </ul>
                         </article>";
                     }
@@ -63,7 +63,7 @@
                             $param = "";
                         }
 
-                        echo "<li><a href='buscar.php?$param&pagina=$i'>$i</a></li>";
+                        echo "<li><a href='/buscar.php?$param&pagina=$i'>$i</a></li>";
                     }
                 ?>
             </ul>
