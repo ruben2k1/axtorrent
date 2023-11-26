@@ -207,6 +207,11 @@ header {
     max-width: 200px;
 }
 
+.container main .main-article article img {
+    max-height: 200px;
+    max-width: 165px;
+}
+
 .container main .Wrapper-article {
     display: flex;
     flex-wrap: wrap;
