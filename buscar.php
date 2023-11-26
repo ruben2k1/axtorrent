@@ -44,7 +44,7 @@
                         echo "
                         <article>
                             <ul>
-                                <li><a href='/archivo.php?titulo={$urlEncoded}'>{$result['TITLE']}</a></li>
+                                <li><a href='/archivo/{$urlEncoded}'>{$result['TITLE']}</a></li>
                             </ul>
                         </article>";
                     }

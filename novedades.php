@@ -32,7 +32,7 @@
                         echo "
                         <div class='main-article'>
                             <article>
-                                <a href='archivo.php?titulo={$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
+                                <a href='archivo/{$urlEncoded}'><img src='{$result['EXT_IMG_ROUTE']}' alt='{$result['TITLE']}'></a>
                             </article>
                         </div>";
                     }
