@@ -1,7 +1,7 @@
 <header>
     <nav>
         <ul>
-            <a href="/"><img src="public/logo.svg" alt="Logotipo AXTorrent" class="logo"></a>
+            <a href="/"><img src="/public/logo.svg" alt="Logotipo AXTorrent" class="logo"></a>
             <li><a href="/"><i class="bi bi-house-fill"></i> INICIO</a></li>
             <li><a href="novedades.php"><i class="bi bi-brightness-high-fill"></i> NOVEDADES</a></li>
             <li><a href="contacto.php"><i class="bi bi-cursor-fill"></i> CONTACTO</a></li>
