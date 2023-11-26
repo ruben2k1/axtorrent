@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargar <?php echo $results1['TITLE']; ?> - AXTorrent</title>
     <meta name="description" content="Descargar <?php echo $results1['TITLE']; ?>">
-    <link rel="canonical" href="https://axtorrent.com/archivo.php?titulo=<?php echo urlencode($results1['TITLE']); ?>">
+    <link rel="canonical" href="https://axtorrent.com/archivo/<?php echo urlencode($results1['TITLE']); ?>">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://axtorrent.com">
     <meta property="og:site_name" content="AXTorrent - Descargar Películas y Series Torrent Gratis">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Descargar <?php echo $results1['TITLE']; ?> Gratis en Español y <?php echo $results1['FORMAT']; ?>">
     <meta name="twitter:description" content="Descargar <?php echo $results1['TITLE']; ?> Gratis en Español y <?php echo $results1['FORMAT']; ?>">
-    <meta name="twitter:image" content="public/logo.svg">
-    <link rel="stylesheet" href="public/css/reset.css">
-    <link rel="stylesheet" href="public/css/index.css">
-    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+    <meta name="twitter:image" content="/public/logo.svg">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9PYVMMV1W"></script>
-    <script src="public/js/analytics.js"></script>
+    <script src="/public/js/analytics.js"></script>
 </head>
 <body>
     <?php require('app/views/partials/header.php'); ?>
