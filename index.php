@@ -32,7 +32,11 @@
             <div class="Wrapper-h1">
                 <h1>DESCARGAR TORRENTS</h1>
             </div>
-            <h3>SERIES</h3>
+
+            <div class="Wrapper-h3">
+                <h3>SERIES</h3>
+            </div>
+
             <div class="main-article">
                 <?php
                     foreach ($results1 as $result) {
@@ -47,7 +51,11 @@
                     }
                 ?>
             </div>
-            <h3>PELÍCULAS</h3>
+
+            <div class="Wrapper-h3">
+                <h3>PELÍCULAS</h3>
+            </div>
+
             <div class="main-article">
                 <?php
                     foreach ($results2 as $result) {
@@ -62,7 +70,11 @@
                     }
                 ?>
             </div>
-            <h3>VIDEOJUEGOS</h3>
+
+            <div class="Wrapper-h3">
+                <h3>VIDEOJUEGOS</h3>
+            </div>
+
             <div class="main-article">
                 <?php
                     foreach ($results3 as $result) {
@@ -77,7 +89,11 @@
                     }
                 ?>
             </div>
-            <h3>DOCUMENTALES</h3>
+
+            <div class="Wrapper-h3">
+                <h3>DOCUMENTALES</h3>
+            </div>
+
             <div class="main-article">
                 <?php
                     foreach ($results4 as $result) {

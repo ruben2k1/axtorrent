@@ -34,7 +34,7 @@ header {
                 color: black;
                 font-weight: bold;
                 background-color: white;
-                
+
                 & .bi-house-fill {
                     color: black;
                 }
@@ -170,24 +170,38 @@ header {
     padding: .5rem;
 }
 
-.container main h3 {
-    text-align: center;
+.container main .Wrapper-h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.container main .Wrapper-h3 h3 {
+    font-size: 1.25rem;
     font-weight: bold;
-    text-decoration: underline;
+    background-color: black;
+    border-radius: .25rem;
+    color: white;
+    padding: .5rem 12.5rem;
 }
 
 .container main .Wrapper-h1 {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2.75rem;
 }
 
 .container main .Wrapper-h1 h1 {
-    font-size: large;
+    font-size: 1.25rem;
     font-weight: bold;
     border: 2px solid black;
-    border-radius: 2rem;
+    border-radius: .5rem;
     padding: .75rem;
+}
+
+.container main .Wrapper-h1 h1:hover {
+    transition: 200ms;
+    color: white;
+    background-color: black;
 }
 
 .container main .Wrapper-h2 {
