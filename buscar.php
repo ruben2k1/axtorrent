@@ -18,13 +18,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent">
     <meta name="twitter:description" content="Buscar: <?php echo $tipo ?? $titulo ?? $formato ?> - AXTorrent">
-    <meta name="twitter:image" content="public/logo.svg">
-    <link rel="stylesheet" href="public/css/reset.css">
-    <link rel="stylesheet" href="public/css/index.css">
-    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+    <meta name="twitter:image" content="/public/logo.svg">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9PYVMMV1W"></script>
-    <script src="public/js/analytics.js"></script>
+    <script src="/public/js/analytics.js"></script>
 </head>
 <body>
     <?php require('app/views/partials/header.php'); ?>
