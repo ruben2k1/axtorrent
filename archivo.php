@@ -61,7 +61,6 @@
                                 <li>Formato: {$results1['GENRE']}</li>";
                             }elseif ($results1['TYPE'] === 'DOCUMENTAL') {
                                 echo "
-                                <li>Año: {$results1['RELEASE_DATE']}</li>
                                 <li>Formato: {$results1['FORMAT']}</li>
                                 <li>Descripción: {$results1['DESCRIPTION']}</li>";
                             }
