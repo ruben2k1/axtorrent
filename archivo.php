@@ -38,9 +38,35 @@
                 </article>
                 <article>
                     <ul>
-                        <li>FORMATO: <?php echo $results1['FORMAT'] ?></li>
-                        <li>EPISODIOS: <?php echo $results2['COUNT'] ?></li>
-                        <li>DESCRIPCIÓN: <?php echo $results1['DESCRIPTION'] ?></li>
+                        <?php
+                            if ($results1['TYPE'] === 'SERIE') {
+                                echo "
+                                <li>Episodios: {$results2['COUNT']}</li>
+                                <li>Formato: {$results1['FORMAT']}</li>
+                                <li>Descripción: {$results1['DESCRIPTION']}</li>";
+                            }elseif ($results1['TYPE'] === 'PELICULA') {
+                                echo "
+                                <li>Año: {$results1['RELEASE_DATE']}</li>
+                                <li>Genre: {$results1['GENRE']}</li>
+                                <li>Director: {$results1['DIRECTOR']}</li>
+                                <li>Reparto: {$results1['CAST']}</li>
+                                <li>Formato: {$results1['FORMAT']}</li>
+                                <li>Descripción: {$results1['DESCRIPTION']}</li>";
+                            }elseif ($results1['TYPE'] === 'MUSICA') {
+                                echo "
+                                <li>Año: {$results1['RELEASE_DATE']}</li>
+                                <li>Genre: {$results1['GENRE']}</li>";
+                            }elseif ($results1['TYPE'] === 'VIDEOJUEGO') {
+                                echo "
+                                <li>Año: {$results1['RELEASE_DATE']}</li>
+                                <li>Formato: {$results1['GENRE']}</li>";
+                            }elseif ($results1['TYPE'] === 'DOCUMENTAL') {
+                                echo "
+                                <li>Año: {$results1['RELEASE_DATE']}</li>
+                                <li>Formato: {$results1['FORMAT']}</li>
+                                <li>Descripción: {$results1['DESCRIPTION']}</li>";
+                            }
+                        ?>
                     </ul>
                     <table>
                         <thead>
