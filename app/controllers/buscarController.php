@@ -281,7 +281,7 @@
             header('Location: error.php?titulo=' . $titulo);
             die();
         }
-    
+
         $totalPages = ceil($totalResults / 20);
     
         $minPage = max(1, $pagina - 3);
