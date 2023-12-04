@@ -45,13 +45,22 @@
                                 <li>Formato: {$results1['FORMAT']}</li>
                                 <li>Descripción: {$results1['DESCRIPTION']}</li>";
                             }elseif ($results1['TYPE'] === 'PELICULA') {
-                                echo "
-                                <li>Año: {$results1['RELEASE_DATE']}</li>
-                                <li>Genre: {$results1['GENRE']}</li>
-                                <li>Director: {$results1['DIRECTOR']}</li>
-                                <li>Reparto: {$results1['CAST']}</li>
-                                <li>Formato: {$results1['FORMAT']}</li>
-                                <li>Descripción: {$results1['DESCRIPTION']}</li>";
+                                if (!empty($results1['RELEASE_DATE'])) {
+                                    echo "
+                                    <li>Año: {$results1['RELEASE_DATE']}</li>
+                                    <li>Genre: {$results1['GENRE']}</li>
+                                    <li>Director: {$results1['DIRECTOR']}</li>
+                                    <li>Reparto: {$results1['CAST']}</li>
+                                    <li>Formato: {$results1['FORMAT']}</li>
+                                    <li>Descripción: {$results1['DESCRIPTION']}</li>";
+                                } else {
+                                    echo "
+                                    <li>Genre: {$results1['GENRE']}</li>
+                                    <li>Director: {$results1['DIRECTOR']}</li>
+                                    <li>Reparto: {$results1['CAST']}</li>
+                                    <li>Formato: {$results1['FORMAT']}</li>
+                                    <li>Descripción: {$results1['DESCRIPTION']}</li>";
+                                }
                             }elseif ($results1['TYPE'] === 'MUSICA') {
                                 echo "
                                 <li>Año: {$results1['RELEASE_DATE']}</li>
