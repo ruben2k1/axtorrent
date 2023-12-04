@@ -49,26 +49,25 @@
                         </article>";
                     }
                 ?>
-
-                <ul class="pagination">
-                <?php 
-                    for ($i = $minPage; $i <= $maxPage; $i++) {
-                        if (isset($tipo)) {
-                        $param = "tipo/{$tipo}";
-                        } elseif (isset($titulo)) {
-                        $param = "titulo/{$titulo}";
-                        } elseif (isset($formato)) {
-                        $param = "formato/{$formato}";
-                        } else {
-                        $param = "";
-                        }
-
-                        echo "<li><a href='/buscar/$param/pagina/$i'>$i</a></li>";
-                    }
-                ?>
-                </ul>
             </div>
 
+            <ul class="pagination">
+                    <?php 
+                        for ($i = $minPage; $i <= $maxPage; $i++) {
+                            if (isset($tipo)) {
+                            $param = "tipo/{$tipo}";
+                            } elseif (isset($titulo)) {
+                            $param = "titulo/{$titulo}";
+                            } elseif (isset($formato)) {
+                            $param = "formato/{$formato}";
+                            } else {
+                            $param = "";
+                            }
+
+                            echo "<li><a href='/buscar/$param/pagina/$i'>$i</a></li>";
+                        }
+                    ?>
+                </ul>
         </main>
 
         <?php require('app/views/partials/aside-right.php'); ?>
