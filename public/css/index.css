@@ -305,7 +305,7 @@ header {
     transition: 200ms;
 }
 
-.contact {
+.contacto {
     display: flex;
     margin-top: 5rem;
     justify-content: center;
@@ -313,11 +313,11 @@ header {
     gap: 1rem;
 }
 
-.contact p {
+.contacto p {
     font-weight: 700;
 }
 
-.contact a {
+.contacto a {
     text-decoration: none;
     font-weight: bold;
     background-color: black;
@@ -327,8 +327,12 @@ header {
     padding: 1rem;
 }
 
-.contact a:hover {
+.contacto a:hover {
     transition: 200ms;
     background-color: white;
     color: black
+}
+
+.error p {
+    font-weight: 700;
 }
