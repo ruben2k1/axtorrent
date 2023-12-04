@@ -1,13 +1,10 @@
 <?php
     session_start();
-
-    $error = $_SESSION['error'];
-
-    if ($error === true) {
-        $_SESSION['error'] = false;
-
+    
+    if (isset($_SESSION['error'])) {
+        unset($_SESSION['error']);
+    } else {
         header('Location: index.php');
-
         die();
     }
 ?>

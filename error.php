@@ -1,7 +1,4 @@
-<?php
-    require_once('app/middlewares/checkError.php');
-    require_once('app/controllers/errorController.php');
-?>
+<?php require_once('app/middlewares/checkError.php'); ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,7 +25,7 @@
                 <h1>ERROR</h1>
             </div>
             <div class="error">
-                <p>No se ha encontrado ningún resultado para <?php echo $titulo ?></p>
+                <p>No se ha encontrado ningún resultado para <?php echo $_GET['titulo']; ?></p>
                 <p>Escriba únicamente las palabras clave, por ejemplo: Breaking Bad</p>
             </div>
         </main>

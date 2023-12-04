@@ -274,7 +274,10 @@
         $totalResults = $sentence2->fetchColumn();
 
         if ($totalResults === 0) {
+            session_start();
+            
             $_SESSION['error'] = true;
+            
             header('Location: error.php?titulo=' . $titulo);
             die();
         }

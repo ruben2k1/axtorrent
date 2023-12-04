@@ -22,7 +22,7 @@
             <div class="Wrapper-h1">
                 <h1>CONTACTO</h1>
             </div>
-            <div class="contact">
+            <div class="contacto">
                 <p>Para pedidos o enlaces rotos de películas y series, puede contactarnos por email</p>
                 <a href="mailto:ayudaaxtorrent@proton.me">ayudaaxtorrent@proton.me</a>
             </div>
