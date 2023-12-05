@@ -41,7 +41,7 @@
             <label for="format">Format</label>
             <select name="format" id="">
                 <option value="HDRip">HDRip</option>
-                <option value="HDTV">HDTV</option>
+                <option value="HDTV" selected>HDTV</option>
                 <option value="HDTV-720p">HDTV-720p</option>
                 <option value="SAT-Rip">SAT-Rip</option>
                 <option value="DVDRip">DVDRip</option>
@@ -51,6 +51,7 @@
                 <option value="BluRay-1080p">BluRay-1080p</option>
                 <option value="BDremux-1080p">BDremux-1080p</option>
                 <option value="4K">4K</option>
+                <option value="PC">PC</option>
             </select><br>
             <label for="release_date">Release date</label>
             <input type="number" name="release_date" id=""><br>

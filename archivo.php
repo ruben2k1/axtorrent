@@ -66,8 +66,13 @@
                                 <li>Año: {$results1['RELEASE_DATE']}</li>
                                 <li>Genre: {$results1['GENRE']}</li>";
                             }elseif ($results1['TYPE'] === 'VIDEOJUEGO') {
-                                echo "
-                                <li>Formato: {$results1['GENRE']}</li>";
+                                if (empty($results1['FORMAT'])) {
+                                    echo "
+                                    <li>Formato: {$results1['GENRE']}</li>";
+                                } else{
+                                    echo "
+                                    <li>Formato: {$results1['FORMAT']}</li>";
+                                }
                             }elseif ($results1['TYPE'] === 'DOCUMENTAL') {
                                 echo "
                                 <li>Formato: {$results1['FORMAT']}</li>
