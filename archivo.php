@@ -73,6 +73,10 @@
                                     echo "
                                     <li>Formato: {$results1['FORMAT']}</li>";
                                 }
+
+                                if (!empty($results1['DESCRIPTION'])) {
+                                    echo "<li>Descripción: {$results1['DESCRIPTION']}</li>";
+                                }
                             }elseif ($results1['TYPE'] === 'DOCUMENTAL') {
                                 echo "
                                 <li>Formato: {$results1['FORMAT']}</li>
