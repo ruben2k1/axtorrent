@@ -162,12 +162,14 @@
             header('Location: ../../dashboard.php');
             break;
         case 'VIDEOJUEGO':
-            $sentence1 = $db->prepare("INSERT INTO files (TITLE, TYPE, EXT_IMG_ROUTE, RELEASE_DATE, UPLOAD_DATE, USER_ID) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
+            $sentence1 = $db->prepare("INSERT INTO files (TITLE, DESCRIPTION, TYPE, FORMAT, EXT_IMG_ROUTE, RELEASE_DATE, UPLOAD_DATE, USER_ID) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)");
             $sentence1->bindParam(1, $title);
-            $sentence1->bindParam(2, $type);
-            $sentence1->bindParam(3, $ext_img_route);
-            $sentence1->bindParam(4, $release_date);
-            $sentence1->bindParam(5, $userid);
+            $sentence1->bindParam(2, $description);
+            $sentence1->bindParam(3, $type);
+            $sentence1->bindParam(4, $format);
+            $sentence1->bindParam(5, $ext_img_route);
+            $sentence1->bindParam(6, $release_date);
+            $sentence1->bindParam(7, $userid);
             $sentence1->execute();
     
             $file_id = intval($db->lastInsertId());
