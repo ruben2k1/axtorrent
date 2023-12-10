@@ -9,11 +9,10 @@
         die();
     }
 
-    $titulo = urldecode($_GET['titulo']);
+    $titulo = rawurldecode($_GET['titulo']);
 
-    $sentence1 = $db->prepare("SELECT * FROM files WHERE LOWER(TITLE) LIKE LOWER(?)");
-    $tituloParam = "%$titulo%";
-    $sentence1->bindParam(1, $tituloParam);
+    $sentence1 = $db->prepare("SELECT * FROM files WHERE TITLE = ?");
+    $sentence1->bindParam(1, $titulo);
     $sentence1->execute();
     $results1 = $sentence1->fetch();
 
