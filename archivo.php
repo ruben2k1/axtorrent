@@ -1,6 +1,6 @@
 <?php
     require_once('app/controllers/archivoController.php');
-    $encodedTitle = rawurlencode($results1['TITLE']);
+    $encodedTitle = urlencode($results1['TITLE']);
 ?>
 
 <!DOCTYPE html>

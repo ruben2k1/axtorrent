@@ -40,7 +40,7 @@
             <div class="main-article">
                 <?php
                     foreach ($results1 as $result) {
-                        $urlEncoded = rawurlencode($result['TITLE']);
+                        $urlEncoded = urlencode($result['TITLE']);
 
                         echo "
                         <div class='main-article'>
@@ -59,7 +59,7 @@
             <div class="main-article">
                 <?php
                     foreach ($results2 as $result) {
-                        $urlEncoded = rawurlencode($result['TITLE']);
+                        $urlEncoded = urlencode($result['TITLE']);
 
                         echo "
                         <div class='main-article'>
@@ -78,7 +78,7 @@
             <div class="main-article">
                 <?php
                     foreach ($results3 as $result) {
-                        $urlEncoded = rawurlencode($result['TITLE']);
+                        $urlEncoded = urlencode($result['TITLE']);
 
                         echo "
                         <div class='main-article'>
@@ -97,7 +97,7 @@
             <div class="main-article">
                 <?php
                     foreach ($results4 as $result) {
-                        $urlEncoded = rawurlencode($result['TITLE']);
+                        $urlEncoded = urlencode($result['TITLE']);
                         
                         echo "
                         <div class='main-article'>

@@ -27,7 +27,7 @@
             <div class="main-article">
                 <?php
                     foreach ($results1 as $result) {
-                        $urlEncoded = rawurlencode($result['TITLE']);
+                        $urlEncoded = urlencode($result['TITLE']);
 
                         echo "
                         <div class='main-article'>

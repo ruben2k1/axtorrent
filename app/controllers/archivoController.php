@@ -9,7 +9,7 @@
         die();
     }
 
-    $titulo = rawurldecode($_GET['titulo']);
+    $titulo = urldecode($_GET['titulo']);
 
     $sentence1 = $db->prepare("SELECT * FROM files WHERE TITLE = ?");
     $sentence1->bindParam(1, $titulo);

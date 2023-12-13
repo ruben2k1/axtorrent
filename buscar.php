@@ -39,7 +39,7 @@
             <div class="Wrapper-article">
                 <?php
                     foreach ($results1 as $result) {
-                        $urlEncoded = rawurlencode($result['TITLE']);
+                        $urlEncoded = urlencode($result['TITLE']);
 
                         echo "
                         <article>
