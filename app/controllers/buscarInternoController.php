@@ -18,7 +18,8 @@
             <ul>
                 <li>TITULO: {$row['TITLE']}</li>
                 <li>FILE_ID: {$row["FILE_ID"]}</li>
-            </ul>";
+            </ul>
+            <hr>";
         }
     } else {
         echo "No se encontraron resultados para el título '$titulo'";
