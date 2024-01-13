@@ -65,9 +65,14 @@
                                     <li>Descripción: {$results1['DESCRIPTION']}</li>";
                                 }
                             }elseif ($results1['TYPE'] === 'MUSICA') {
-                                echo "
-                                <li>Año: {$results1['RELEASE_DATE']}</li>
-                                <li>Género: {$results1['GENRE']}</li>";
+                                if (!empty($results1['RELEASE_DATE'])) {
+                                    echo "
+                                    <li>Año: {$results1['RELEASE_DATE']}</li>
+                                    <li>Género: {$results1['GENRE']}</li>";
+                                }else {
+                                    echo "<li>Género: {$results1['GENRE']}</li>";
+                                }
+                                
                             }elseif ($results1['TYPE'] === 'VIDEOJUEGO') {
                                 if (empty($results1['FORMAT'])) {
                                     echo "
