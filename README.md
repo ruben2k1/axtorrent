@@ -1,6 +1,8 @@
 ES:
 
-AXTorrent representa una mejora significativa de [FileDown](https://github.com/ruben2k1/FileDown). Listo para despliegue en producción
+Como parte de mi interés constante por mejorar y aprender en el desarrollo web, decidí embarcarme en la tarea de reescribir un proyecto previamente desarrollado en JavaScript. Se han implementado mejoras significativas y corregido errores importantes
+
+AXTorrent representa una evolución de [FileDown](https://github.com/ruben2k1/FileDown). Listo para despliegue en producción
 
 Detalles técnicos:
 
