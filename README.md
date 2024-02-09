@@ -12,11 +12,11 @@ Detalles técnicos:
 
 Características:
 
-Desarrollo de una interfaz de usuario responsive para visualizar contenido utilizando HTML, CSS y JavaScript
-Requiere autenticación de cuenta de administrador para agregar contenido, garantizando la seguridad e integridad
-Implementación de un patrón MVC para una arquitectura de código organizada y escalable
-MariaDB como sistema de gestión de bases de datos para el almacenamiento eficiente y seguro de datos
-Configuración y despliegue del servidor NGINX con PHP-FPM
+* Desarrollo de una interfaz de usuario responsive para visualizar contenido utilizando HTML, CSS y JavaScript
+* Requiere autenticación de cuenta de administrador para agregar contenido, garantizando la seguridad e integridad
+* Implementación de un patrón MVC para una arquitectura de código organizada y escalable
+* MariaDB como sistema de gestión de bases de datos para el almacenamiento eficiente y seguro de datos
+* Configuración y despliegue del servidor NGINX con PHP-FPM
 
 EN:
 
@@ -32,8 +32,8 @@ Technical details:
 
 Features:
 
-Development of a responsive user interface for displaying content using HTML, CSS and JavaScript.
-Requires administrator account authentication to add content, ensuring security and integrity
-Implementation of an MVC pattern for an organized and scalable code architecture
-MariaDB as a database management system for efficient and secure data storage
-Configuration and deployment of NGINX server with PHP-FPM
+* Development of a responsive user interface for displaying content using HTML, CSS and JavaScript.
+* Requires administrator account authentication to add content, ensuring security and integrity
+* Implementation of an MVC pattern for an organized and scalable code architecture
+* MariaDB as a database management system for efficient and secure data storage
+* Configuration and deployment of NGINX server with PHP-FPM
