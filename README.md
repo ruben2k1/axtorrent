@@ -1,6 +1,6 @@
 ES:
 
-AXTorrent representa una mejora significativa de FileDown [FileDown](https://github.com/ruben2k1/FileDown). Listo para despliegue en producción
+AXTorrent representa una mejora significativa de [FileDown](https://github.com/ruben2k1/FileDown). Listo para despliegue en producción
 
 Detalles técnicos:
 
@@ -20,7 +20,7 @@ Configuración y despliegue del servidor NGINX con PHP-FPM
 
 EN:
 
-AXTorrent represents a significant enhancement to FileDown [FileDown](https://github.com/ruben2k1/FileDown). Ready for production deployment
+AXTorrent represents a significant enhancement to [FileDown](https://github.com/ruben2k1/FileDown). Ready for production deployment
 
 Technical details:
 
