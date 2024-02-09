@@ -4,11 +4,11 @@ AXTorrent representa una mejora significativa de [FileDown](https://github.com/r
 
 Detalles técnicos:
 
-Front-end: HTML, CSS (Flexbox), JavaScript, Bootstrap Icons
-Back-end: PHP (puro)
-Base de datos: SQL, MariaDB
-Servidor: NGINX
-Patrón de diseño: Modelo-Vista-Controlador (MVC)
+* Front-end: HTML, CSS (Flexbox), JavaScript, Bootstrap Icons
+* Back-end: PHP (puro)
+* Base de datos: SQL, MariaDB
+* Servidor: NGINX
+* Patrón de diseño: Modelo-Vista-Controlador (MVC)
 
 Características:
 
@@ -24,11 +24,11 @@ AXTorrent represents a significant enhancement to [FileDown](https://github.com/
 
 Technical details:
 
-Front-end: HTML, CSS, JavaScript, Bootstrap Icons
-Back-end: PHP (pure)
-Database: SQL, MariaDB
-Server: NGINX
-Design pattern: Model-View-Controller (MVC)
+* Front-end: HTML, CSS, JavaScript, Bootstrap Icons
+* Back-end: PHP (pure)
+* Database: SQL, MariaDB
+* Server: NGINX
+* Design pattern: Model-View-Controller (MVC)
 
 Features:
 
